@@ -6,7 +6,7 @@ import json
 
 parser = argparse.ArgumentParser(description="Connect to MySQL and fetch a compound by ID.")
 parser.add_argument("-u", "--user", required=True, help="MySQL username")
-# parser.add_argument("-p", "--password", required=True, help="MySQL password")
+parser.add_argument("-p", "--password", required=True, help="MySQL password")
 parser.add_argument("-H", "--host", required=True, help="MySQL host")  # Changed from -h to -H
 parser.add_argument("-d", "--database", required=True, help="Database name")
 parser.add_argument("-P", "--port", required=True, type=int, help="MySQL port")
@@ -19,7 +19,7 @@ try:
         host=args.host,
         port=args.port,
         user=args.user,
-        # password=args.password,
+        password=args.password,
         database=args.database
     )
 
